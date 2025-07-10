@@ -6,6 +6,11 @@ import os
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def home():
+    return 'Recipe Scraper API is running. Use /scrape?url=...'
+
+
 @app.route('/scrape', methods=['GET'])
 def scrape():
     url = request.args.get('url')
